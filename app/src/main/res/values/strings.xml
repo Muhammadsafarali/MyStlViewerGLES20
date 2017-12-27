@@ -1,3 +1,4 @@
 <resources>
+    <string name="error_fetch_data">Failed to read the STL file.</string>
     <string name="app_name">MyStlViewerGLES20</string>
 </resources>

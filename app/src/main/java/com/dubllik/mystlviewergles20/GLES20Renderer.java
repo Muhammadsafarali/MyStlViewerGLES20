@@ -18,7 +18,8 @@ import javax.microedition.khronos.opengles.GL10;
 
 public class GLES20Renderer implements GLSurfaceView.Renderer {
 
-    stlLoader stlFile;
+//    stlLoader stlFile;
+    MySTLLoader stlFile;
 
     private stlLoader loadModel(int id) {
         stlLoader stl = new stlLoader();
@@ -39,8 +40,9 @@ public class GLES20Renderer implements GLSurfaceView.Renderer {
         mContext = context;
 
         Matrix.setIdentityM(mAccumulatedRotation, 0);
-        stlFile = loadModel(R.raw.magnoli);
-
+//        stlFile = loadModel(R.raw.magnoli);
+        stlFile = new MySTLLoader(mContext.getResources().openRawResource(R.raw.sitting));
+        stlFile.generateVertexArrays(0.05f);
     }
 
     public void onDrawFrame(GL10 glUnused) {
